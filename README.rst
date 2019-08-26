@@ -40,7 +40,7 @@ MISP will be automatically deployed in an Ubuntu Artful Server.
     $ vagrant up
 
 Once the VM will be configured by Vagrant, go to the address
-http://127.0.0.1:5000.
+http://127.0.0.1:8080.
 
 You can now edit the source code with your favorite editor and test it in your
 browser. The only thing is to not forget to restart Apache in the VM after a
