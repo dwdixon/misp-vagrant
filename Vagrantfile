@@ -12,8 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  #config.vm.box = "ubuntu/artful64"
-  config.vm.box = "fso/artful64"
+  config.vm.box = "ubuntu/bionic64"
   config.vm.provision :shell, path: "bootstrap.sh", args: "#{MISP_ENV}"
 
   # Disable automatic box update checking. If you disable this, then
@@ -45,7 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   disabled = true
-  vm_name = "MISP - Ubuntu 17.10"
+  vm_name = "MISP - Ubuntu 18.04 LTS"
   if "#{MISP_ENV}" == "dev"
       disabled = false
       vm_name.concat(" - DEV")
