@@ -13,12 +13,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   # Set the VM hostname
  config.vm.define "misp-test" do |misp_test|
+  misp_test.vm.hostname = "misp-test" 
 
   # Every Vagrant virtual environment requires a box to build off of.
   misp_test.vm.box = "ubuntu/bionic64"
   misp_test.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-  misp_test.vm.provision :shell, path: "bootstrap.sh", args: "#{MISP_ENV}"
-  misp_test.vm.hostname = "misp-test" 
+  config.vm.provision :shell, path: "bootstrap.sh", args: "#{MISP_ENV}"
+  
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
